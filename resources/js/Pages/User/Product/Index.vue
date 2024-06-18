@@ -208,23 +208,23 @@ function updateFilteredProducts() {
                                 <div class="flex items-center justify-between space-x-3">
                                     <div class="basis-1/3">
                                         <label for="filters-price-from"
-                                               class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                               class="mb-2 block text-sm font-medium text-gray-900">
                                             From
                                         </label>
 
                                         <input type="number" id="filters-price-from" placeholder="Min price"
                                                v-model="filterPrices.prices[0]"
-                                               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" />
+                                               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" />
                                     </div>
                                     <div class="basis-1/3">
                                         <label for="filters-price-to"
-                                               class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                               class="mb-2 block text-sm font-medium text-gray-900">
                                             To
                                         </label>
 
                                         <input type="number" id="filters-price-to" v-model="filterPrices.prices[1]"
                                                placeholder="Max price"
-                                               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" />
+                                               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" />
                                     </div>
                                     <SecondaryButton class="self-end" @click="priceFilter()">
                                         Ok

@@ -182,9 +182,9 @@ const AddAddress = async ()=>{
         <section class="text-gray-600 body-font pb-10">
             <div class="container px-5 pt-12 mx-auto h-screen flex sm:flex-nowrap flex-wrap gap-4">
                 <div class="relative overflow-x-auto sm:rounded-lg lg:w-2/3 md:w-1/2 lg:px-6">
-                    <h1 class="text-xl font-semibold mb-4 dark:text-white">Your Cart</h1>
-                    <table class="w-full text-sm text-left overflow-y-scroll max-h-[800px] text-gray-500 dark:text-gray-400 rounded-lg">
-                        <thead class="text-xs text-white uppercase bg-gray-800 dark:bg-gray-700 dark:text-gray-400">
+                    <h1 class="text-xl font-semibold mb-4">Your Cart</h1>
+                    <table class="w-full text-sm text-left overflow-y-scroll max-h-[800px] text-gray-500 rounded-lg">
+                        <thead class="text-xs text-white uppercase bg-gray-800">
                         <tr>
                             <th scope="col" class="px-16 py-3 rounded-tl-lg">
                                 <span class="sr-only">Image</span>
@@ -204,7 +204,7 @@ const AddAddress = async ()=>{
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-if="carts" v-for="(item, index) in carts" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr v-if="carts" v-for="(item, index) in carts" :key="index" class="bg-white border-b hover:bg-gray-50">
                             <td class="p-4">
                                 <div class="w-32 max-w-32">
                                     <img class="w-32 h-36" v-if="item.product_image.length > 0"
@@ -215,21 +215,21 @@ const AddAddress = async ()=>{
                                 </div>
 
                             </td>
-                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                            <td class="px-6 py-4 font-semibold text-gray-900">
                                 {{ item.product.title }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex items-center">
-                                    <button @click.prevent="reduceQuantity(item)" :disabled="item.quantity === 1" :class="item.quantity === 1 ? 'cursor-not-allowed text-gray-500 bg-white hover:bg-gray-100' : 'cursor-pointer bg-red-500 text-white hover:bg-red-600'" class="inline-flex items-center justify-center p-1 text-sm font-medium h-6 w-6 border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                                    <button @click.prevent="reduceQuantity(item)" :disabled="item.quantity === 1" :class="item.quantity === 1 ? 'cursor-not-allowed text-gray-500 bg-white hover:bg-gray-100' : 'cursor-pointer bg-red-500 text-white hover:bg-red-600'" class="inline-flex items-center justify-center p-1 text-sm font-medium h-6 w-6 border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200" type="button">
                                         <span class="sr-only">Minus button</span>
                                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
                                         </svg>
                                     </button>
                                     <div class="ms-3">
-                                        <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="item.quantity" required>
+                                        <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1" v-model="item.quantity" required>
                                     </div>
-                                    <button @click.prevent="addQuantity(item)" class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-mediu cursor-pointer bg-green-500 text-white hover:bg-green-600 border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                                    <button @click.prevent="addQuantity(item)" class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-mediu cursor-pointer bg-green-500 text-white hover:bg-green-600 border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200" type="button">
                                         <span class="sr-only">Plus button</span>
                                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
@@ -237,11 +237,11 @@ const AddAddress = async ()=>{
                                     </button>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                            <td class="px-6 py-4 font-semibold text-gray-900">
                                 Rp. {{Number(item.product.price).toLocaleString() }}
                             </td>
                             <td class="px-6 py-4">
-                                <a @click="deleteProduct(item)" class="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline">
+                                <a @click="deleteProduct(item)" class="font-medium cursor-pointer text-red-600 hover:underline">
                                     <el-icon class="mt-2"><DeleteFilled /></el-icon>
                                    <span class="ml-2">Delete</span>
                                 </a>
@@ -250,7 +250,7 @@ const AddAddress = async ()=>{
                         </tbody>
                     </table>
                     <div v-if="!carts">
-                        <div colspan="5"  class="px-6 flex flex-col justify-center items-center font-semibold text-gray-900 dark:text-white">
+                        <div colspan="5"  class="px-6 flex flex-col justify-center items-center font-semibold text-gray-900">
                             <p class="mt-6 text-red-500">The Cart is currently empty</p>
                             <Link :href="route('product.index')" class="bg-blue-500 text-white px-3 py-0.5 mt-2 rounded-lg shadow">Add Product</Link>
                         </div>
@@ -260,57 +260,57 @@ const AddAddress = async ()=>{
                 <!-- Start modal -->
                 <el-dialog
                     v-model="dialogVisible"
-                    class="text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                    class="text-gray-800"
                     width="60%"
                 >
-                    <h3 class="text-lg text-gray-800 dark:text-white mb-6">Add Address</h3>
+                    <h3 class="text-lg text-gray-800 mb-6">Add Address</h3>
                     <form @submit.prevent="AddAddress()">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <div class="mb-6">
-                                    <label for="form_address1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address 1</label>
-                                    <input type="text" v-model="address1" name="form_address1" id="form_address1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address 1" required>
+                                    <label for="form_address1" class="block mb-2 text-sm font-medium text-gray-900">Address 1</label>
+                                    <input type="text" v-model="address1" name="form_address1" id="form_address1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Address 1" required>
                                 </div>
                                 <div class="mb-6">
-                                    <label for="form_no_hp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Handphone</label>
-                                    <input type="text" v-model="no_hp" name="form_no_hp" id="form_no_hp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No Handphone">
+                                    <label for="form_no_hp" class="block mb-2 text-sm font-medium text-gray-900">No Handphone</label>
+                                    <input type="text" v-model="no_hp" name="form_no_hp" id="form_no_hp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="No Handphone">
                                 </div>
                                 <div class="mb-6">
-                                    <label for="form_province" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Province</label>
-                                    <select id="form_province" name="form_province" @change="getCityByProvince" v-model="prov_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <label for="form_province" class="block mb-2 text-sm font-medium text-gray-900">Province</label>
+                                    <select id="form_province" name="form_province" @change="getCityByProvince" v-model="prov_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                         <option v-for="(prov, index) in provinces" :key="index" :value="prov.province_id" >{{prov.province}}</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-6">
-                                    <label for="form_city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
-                                    <select id="form_city" name="form_city" v-model="city_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <label for="form_city" class="block mb-2 text-sm font-medium text-gray-900">City</label>
+                                    <select id="form_city" name="form_city" v-model="city_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                         <option v-for="(city, index) in cities" :key="index" :value="city.city_id" >{{city.city_name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div>
                                 <div class="mb-6">
-                                    <label for="form_countrycode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Country Code</label>
-                                    <input type="text" v-model="country_code" name="form_countrycode" id="form_countrycode" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Country Code" required>
+                                    <label for="form_countrycode" class="block mb-2 text-sm font-medium text-gray-900">Country Code</label>
+                                    <input type="text" v-model="country_code" name="form_countrycode" id="form_countrycode" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Country Code" required>
                                 </div>
 
                                 <div class="mb-6">
-                                    <label for="form_postcode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Postcode</label>
-                                    <input type="text" v-model="postcode" name="form_postcode" id="form_postcode" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Postcode" required>
+                                    <label for="form_postcode" class="block mb-2 text-sm font-medium text-gray-900">Postcode</label>
+                                    <input type="text" v-model="postcode" name="form_postcode" id="form_postcode" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Postcode" required>
                                 </div>
 
                                 <div class="mb-6">
-                                    <label for="form_active" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
-                                    <select id="form_active" name="form_active" v-model="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <label for="form_active" class="block mb-2 text-sm font-medium text-gray-900">Type</label>
+                                    <select id="form_active" name="form_active" v-model="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                         <option value=home selected>Home</option>
                                         <option value="office">Office</option>
                                         <option value="school">School</option>
                                     </select>
                                 </div>
                                 <div class="mb-6">
-                                    <label for="form_active" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
-                                    <select id="form_active" name="form_active" v-model="isMain" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <label for="form_active" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
+                                    <select id="form_active" name="form_active" v-model="isMain" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                         <option value="1" selected>Active</option>
                                         <option value="0">Non Active</option>
                                     </select>
@@ -320,20 +320,20 @@ const AddAddress = async ()=>{
 
 
                         <div class="flex w-full justify-center items-center gap-4">
-                            <button type="button" @click="dialogVisible = false" class="text-white bg-black hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-dark dark:hover:bg-slate-900 dark:focus:ring-black">Cancel</button>
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <button type="button" @click="dialogVisible = false" class="text-white bg-black hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Cancel</button>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
                         </div>
                     </form>
                 </el-dialog>
                 <!-- End modal -->
 
-                <div class="lg:w-1/3 md:w-1/2 bg-white px-6 flex flex-col md:ml-auto w-full h-fit md:py-8 mt-8 md:mt-0 dark:bg-gray-800 rounded-lg">
-                    <h2 class="text-gray-900 text-2xl mb-1 font-bold dark:text-white">Summary</h2>
-                    <p v-if="total" class="leading-relaxed font-semibold mb-5 text-gray-600 dark:text-gray-200">Total : Rp. {{ Number(total).toLocaleString() }}</p>
-                    <p v-else class="leading-relaxed font-semibold mb-5 text-gray-600 dark:text-gray-200">Total : Rp. 0</p>
-                    <h2 class="text-gray-900 text-xl mb-1 font-semibold dark:text-white">Shipping Address</h2>
-                    <p v-if="userAddress" class="leading-relaxed mb-5 text-gray-600 dark:text-gray-200">{{userAddress.address1}}, {{userAddress.city}}, {{userAddress.postcode}}</p>
-                    <button v-else type="button" @click="openAddModal" class="flex my-2 items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                <div class="lg:w-1/3 md:w-1/2 bg-white px-6 flex flex-col md:ml-auto w-full h-fit md:py-8 mt-8 md:mt-0 rounded-lg">
+                    <h2 class="text-gray-900 text-2xl mb-1 font-bold">Summary</h2>
+                    <p v-if="total" class="leading-relaxed font-semibold mb-5 text-gray-600">Total : Rp. {{ Number(total).toLocaleString() }}</p>
+                    <p v-else class="leading-relaxed font-semibold mb-5 text-gray-600">Total : Rp. 0</p>
+                    <h2 class="text-gray-900 text-xl mb-1 font-semibold">Shipping Address</h2>
+                    <p v-if="userAddress" class="leading-relaxed mb-5 text-gray-600">{{userAddress.address1}}, {{userAddress.city}}, {{userAddress.postcode}}</p>
+                    <button v-else type="button" @click="openAddModal" class="flex my-2 items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 focus:outline-none">
                         <el-icon><Plus /></el-icon>
                         <span class="ml-2"> Add Address</span>
                     </button>
@@ -368,7 +368,7 @@ const AddAddress = async ()=>{
                         </div>
                         <button v-if="carts && userAddress" type="submit" class="text-white w-full bg-blue-600 border-0 py-1 px-6 focus:outline-none hover:bg-blue-700 rounded-lg text-lg">Checkout</button>
                     </form>
-                        <Link :href="route('product.index')" class="text-xs text-gray-500 mt-3 dark:text-gray-100">Continue shopping</Link>
+                        <Link :href="route('product.index')" class="text-xs text-gray-500 mt-3">Continue shopping</Link>
                 </div>
                 </div>
         </section>

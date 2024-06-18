@@ -50,7 +50,7 @@ const sampleImage = [
         <div class="mt-4 mb-6">
         <section class="text-gray-600 body-font overflow-y-auto h-full">
             <div class="container px-5 py-24 mx-auto ">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 rounded-lg bg-white dark:bg-gray-800 px-10 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 rounded-lg bg-white px-10 py-12">
                     <div class="w-full">
                         <Splide :options="{ type : 'loop', gap: '1rem', autoplay: true}" aria-label="My Favorite Images">
                             <SplideSlide v-if="product.product_images.length" v-for="item in product.product_images">
@@ -65,8 +65,8 @@ const sampleImage = [
                         </Splide>
                     </div>
                     <div class="lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 class="text-sm title-font text-gray-500 tracking-widest dark:text-gray-100">{{ product.brand.name }}</h2>
-                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1 dark:text-gray-100">{{ product.title }}</h1>
+                        <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ product.brand.name }}</h2>
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.title }}</h1>
                         <div class="flex mb-4">
                               <span class="flex items-center">
                                 <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-green-500" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ const sampleImage = [
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-green-500" viewBox="0 0 24 24">
                                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                                 </svg>
-                                <span class="text-gray-600 ml-3 dark:text-gray-100">4 Reviews</span>
+                                <span class="text-gray-600 ml-3">4 Reviews</span>
                               </span>
                               <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
                                 <a class="text-gray-500">
@@ -104,13 +104,13 @@ const sampleImage = [
                                 </a>
                             </span>
                         </div>
-                        <p class="leading-relaxed dark:text-gray-100">{{ product.description }}</p>
+                        <p class="leading-relaxed">{{ product.description }}</p>
                         <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                            <p class="text-gray-900 dark:text-gray-100">Stock : {{product.quantity}}</p>
+                            <p class="text-gray-900">Stock : {{product.quantity}}</p>
                         </div>
                         <div class="flex justify-between">
                             <div class="mt-1">
-                                <span class="title-font font-medium text-2xl text-gray-900 dark:text-gray-100">Rp. {{ Number(product.price).toLocaleString() }}</span>
+                                <span class="title-font font-medium text-2xl text-gray-900">Rp. {{ Number(product.price).toLocaleString() }}</span>
                             </div>
                             <div class="flex">
                                 <div class="flex bg-blue-600 px-3 rounded-full items-center   transition duration-200 hover:scale-110 hover:bg-blue-800">

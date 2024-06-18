@@ -38,7 +38,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="antialiased bg-gray-50 dark:bg-gray-900" @scroll="handleScroll">
+    <div class="antialiased bg-gray-50" @scroll="handleScroll">
         <Navbar/>
         <div class="mt-12">
             <main>

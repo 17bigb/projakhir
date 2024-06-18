@@ -39,7 +39,7 @@ const addToCart = (product) => {
         <Header/>
         <Panel/>
         <CategoryList/>
-        <div class="bg-white dark:bg-gray-900">
+        <div class="bg-white">
             <div class="mx-auto flex flex-col w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">Latest Product List</h2>
                 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 ">
@@ -54,14 +54,14 @@ const addToCart = (product) => {
                         </el-carousel>
 
                         <div class="px-4 mt-4 -ml-1">
-                            <Link :href="route('product.view', product.slug)" class="text-gray-900 font-semibold dark:text-gray-100">
+                            <Link :href="route('product.view', product.slug)" class="text-gray-900 font-semibold">
                                 {{ product.title }}
                             </Link>
                         </div>
                         <div class="flex justify-between px-4">
                             <div>
-                                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{{ product.brand.name }}</p>
-                                <p class="text-sm font-medium text-gray-900 dark:text-gray-50">Rp. {{ Number(product.price).toLocaleString() }}</p>
+                                <p class="mt-1 text-sm text-gray-600">{{ product.brand.name }}</p>
+                                <p class="text-sm font-medium text-gray-900">Rp. {{ Number(product.price).toLocaleString() }}</p>
                             </div>
                             <div class="flex gap-2 items-center">
                                 <div>

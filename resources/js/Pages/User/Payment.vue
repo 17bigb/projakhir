@@ -66,8 +66,8 @@ const handlePayment = (token) => {
                     <h1 class="text-center font-bold text-xl uppercase">Secure payment</h1>
                 </div>
                 <div class="relative overflow-x-auto">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
                         <tr>
                             <th scope="col" class="px-6 py-3 rounded-s-lg">
                                 Product name
@@ -81,8 +81,8 @@ const handlePayment = (token) => {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(item, i) in order.items" :key="i" class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr v-for="(item, i) in order.items" :key="i" class="bg-white">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 <div v-for="(product, key) in item.product">
                                     {{product.title}}
                                 </div>
@@ -96,7 +96,7 @@ const handlePayment = (token) => {
                         </tr>
                         </tbody>
                         <tfoot>
-                        <tr class="font-semibold text-gray-900 dark:text-white">
+                        <tr class="font-semibold text-gray-900">
                             <th scope="row" class="px-6 py-3 text-base">Total</th>
                             <td class="px-6 py-3">{{total_product}}</td>
                             <td class="px-6 py-3">Rp. {{ Number(order.gross_amount).toLocaleString() }}</td>
@@ -105,12 +105,12 @@ const handlePayment = (token) => {
                     </table>
                 </div>
                 <div class="flex justify-end mb-2 mt-4">
-                    <div class="text-gray-700 mr-2 dark:text-gray-200">Subtotal:</div>
-                    <div class="text-gray-700 dark:text-gray-200">Rp. {{ Number(order.gross_amount).toLocaleString() }}</div>
+                    <div class="text-gray-700 mr-2">Subtotal:</div>
+                    <div class="text-gray-700">Rp. {{ Number(order.gross_amount).toLocaleString() }}</div>
                 </div>
                 <div class="flex justify-end mb-8">
-                    <div class="text-gray-700 mr-2 dark:text-gray-200">Shipping:</div>
-                    <div class="text-gray-700 dark:text-gray-200">Rp. {{ Number(order.courir_price).toLocaleString() }}</div>
+                    <div class="text-gray-700 mr-2">Shipping:</div>
+                    <div class="text-gray-700">Rp. {{ Number(order.courir_price).toLocaleString() }}</div>
 
                 </div>
                 <div class="flex justify-end mb-8">
