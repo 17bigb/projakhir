@@ -36,9 +36,9 @@ import App from "@/Layouts/App.vue";
                     <header class="mb-4 lg:mb-6 not-format">
                         <address class="flex items-center mb-6 not-italic">
                             <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                <img class="mr-4 w-16 h-16 rounded-full" src="#" alt="Ardhi Wahyu">
+                                <img class="mr-4 w-16 h-16 rounded-full" src="https://media.licdn.com/dms/image/D5603AQEJnLwSyGeCYw/profile-displayphoto-shrink_400_400/0/1718707848068?e=1724284800&v=beta&t=dO8sRZET5GWCRw14s46AqZwxVIToRcxyK7LdGZdwKqA" alt="Ardhi Wahyu">
                                 <div>
-                                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Arhdhi Wahyu</a>
+                                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Ardhi Wahyu</a>
                                     <p class="text-base text-gray-500 dark:text-gray-400">Undergraduate Information Technology Student at Brawijaya University</p>
                                     <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2024-06-15" title="July 15th, 2024">July. 15, 2024</time></p>
                                 </div>
@@ -50,7 +50,7 @@ import App from "@/Layouts/App.vue";
                     <p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
                         you can think things through before committing to an actual design project.</p>
                     
-                    <figure><img src="https://cdn.antaranews.com/cache/1200x800/2023/12/14/IMG_1674.jpg" alt="">
+                    <figure><img src="https://cdn.antaranews.com/cache/1200x800/2023/12/14/IMG_1674.jpg" alt="ardhi">
                     </figure>
                 </article>
             </div>
